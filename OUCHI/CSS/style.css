@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+#header {
+  /*背景を設定するdivの基点とするためrelativeをかける*/
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /*はみ出しているところを隠す*/
+  overflow: hidden;
+}
+
+#header-img {
+  /*背景を固定するためfixedをかける*/
+  position: fixed;
+  /*#container,#footerよりも下に配置するために数値を小さくする*/
+  z-index: 1;
+  /*topの位置がJSで変化*/
+  top: 0;
+  /*以下画面で背景画像を表示させるための指定*/
+  width: 98%;
+  height: 98vh;
+  margin-top: 10px;
+  /*背景画像の設定*/
+  background: url("../image/sunrise.jpg") no-repeat top center;
+  background-size: cover;
+  /*変化する基点を中心からに設定*/
+  transform-origin: center;
+}
+
+#container,
+#footer {
+  position: relative;
+  /*#header-imgよりも配置を上にするためにrelativeをつける*/
+  z-index: 2;
+  /*#header-imgよりもz-indexの値を大きな数値にして上に表示*/
+}
+
+/*========= レイアウトのためのCSS ===============*/
+#header h1 {
+  color: #fff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /*天地中央に配置*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  /*#header-imgよりも手前に配置*/
+}
+
+#container h2 {
+  font-size: 1.2rem;
+}
+
+#container p {
+  margin-top: 20px;
+}
+
+#footer {
+  background: #333;
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 20px;
+}
+
+section {
+  background: #fff;
+  padding: 30px;
+}
+
+section:nth-of-type(2n+1) {
+  background: #eee;
+}
+
+
+
+.sample_sp_menu {
+	background-color: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: -300px;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	color: white;
+	text-align: center;
+	transition: .5s;
+  z-index: 999;
+}
+.sample_sp_menu ul {
+	padding-inline: 0;
+}
+.sample_sp_menu li {
+	list-style: none;
+	margin-top: 1.5rem;
+	cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------- */
